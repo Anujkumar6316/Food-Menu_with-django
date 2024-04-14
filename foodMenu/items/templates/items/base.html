@@ -1,0 +1,24 @@
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'items/style.css' %}">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'items:index' %}">Home</a></li>
+            <li><a href="{% url 'items:about' %}">About</a></li>
+            <li><a href="{% url 'items:contact' %}">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <img src="{% static 'items/img/food1.jpg' %}" alt="food1">
+        <div class="container__text">
+            <h1>Chicken Biryani</h1>
+            <div class="container__text__star">
+                <span class="fa fa-star"></span>
+            </div>
+        </div>
+    </div>
+</body>

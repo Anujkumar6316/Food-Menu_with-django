@@ -32,3 +32,29 @@
 - Template allows us to combine the static and dynamic page.
 
 ## Now we will create our detail view for our items.
+- Here idea is to show the detail view of our item whatever item we select.
+- To achieve this we will follow some steps:
+
+    1. Create view for the details
+    ```py
+    def details(request, id):
+        item = Item.objects.get(pk=id)
+        return render(request, 'items/details.html', {'item':item})
+    ```
+    2. Create url path
+    ```py
+        path('details/<int:id>/', views.deatails, name='details'),
+    ```
+    3. Create template details.html
+    ```html
+        <h1>{{item.item_name}}</h1>
+        <h1>{{item.item_price}}</h2>
+        .....
+    ```
+    4. Check if everything is workin fine or not.
+
+
+## Removing hardcoded url
+```html
+<a href="{% url 'name_of_the_path/url' item_id %}></a>
+```
