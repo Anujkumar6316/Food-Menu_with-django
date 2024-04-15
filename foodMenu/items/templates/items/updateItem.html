@@ -1,0 +1,52 @@
+{% load widget_tweaks %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update form</title>
+    <link rel="stylesheet" href="{% static 'items/form.css' %}">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" /> -->
+</head>
+
+<body>
+    <!-- form container -->
+    <div class="form__container">
+        <form method="POST" enctype="multipart/form-data" class="form__container">
+            {% csrf_token %}
+            {{form.as_p}}
+            <!-- <div class="form__container__title">
+                <h1>Update Item</h1>
+            </div>
+            <div class="form__container__input">
+                <label for="item_name">Item Name</label>
+                <input type="text" name="item_name" id="item_name" value="{{item.item_name}}">
+            </div>
+            <div class="form__container__input">
+                <label for="item_desc">Item Description</label>
+                <textarea name="item_desc" id="item_desc">{{item.item_desc}}</textarea>
+            </div>
+            <div class="form__container__input">
+                <label for="item_preptime">Preparation Time</label>
+                <input type="number" name="item_preptime" id="item_preptime" value="{{item.item_preptime}}">
+            </div>
+            <div class="form__container__input">
+                <label for="item_price">Price</label>
+                <input type="number" name="item_price" id="item_price" value="{{item.item_price}}">
+            </div>
+            <div class="form__container__input">
+                <label for="item_img">Item Image</label>
+                <input type="file" name="item_img" id="item_img">
+            </div>-->
+            <div class="form__container__input">
+                <button type="submit">Update</button>
+            </div> 
+        </form>
+</body>
+
+</html>

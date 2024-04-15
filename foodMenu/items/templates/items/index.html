@@ -17,22 +17,23 @@
   <!-- nav bar -->
   <nav>
     <div class="nav__logo">
-      <h1>Food Menu</h1>
+      <h1>Food Menu </h1>
     </div>
     <div class="nav__menu">
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
+        <li><a href="{% url 'items:addItem' %}">Add Item</a></li>
       </ul>
     </div>
   </nav>
   {% for i in item_list %}
-  <h1>{{i.item_img.url}}</h1>
+  <h1> {{i.item_img.url}}</h1>
   <div class="container">
     <img src="{{i.item_img}}" alt="{{i.item_img.url}}" />
     <div class="container__text">
-      <h1>{{i.item_name}}</h1>
+      <a href="{% url 'items:update' i.id %}"><h1>{{i.item_name}}</h1></a>
 
       <div class="container__text__star">
         <span class="fa fa-star checked"></span>
