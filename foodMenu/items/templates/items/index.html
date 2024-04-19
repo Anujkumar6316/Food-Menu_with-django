@@ -25,6 +25,12 @@
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
         <li><a href="{% url 'items:addItem' %}">Add Item</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'users:logout' %}">Logout</a></li>
+          <li><a href="{% url 'users:profile' %}">Profile</a></li>
+        {% else %}
+          <li><a href="{% url 'users:login' %}">Login</a></li>
+        {% endif %}
       </ul>
     </div>
   </nav>
@@ -32,7 +38,7 @@
   <h1> {{i.item_img.url}}</h1>
   <div class="container">
     <img src="{{i.item_img}}" alt="{{i.item_img.url}}" />
-    <div class="container__text">
+    <div class="container__text glass">
       <a href="{% url 'items:update' i.id %}"><h1>{{i.item_name}}</h1></a>
 
       <div class="container__text__star">

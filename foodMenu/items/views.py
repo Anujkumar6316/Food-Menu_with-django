@@ -3,12 +3,20 @@ from django.http import HttpResponse
 from .models import Item
 from .forms import ItemForm
 
+# Class Based Views
+from django.views.generic import ListView
+
 # Create your views here.
 def index(request):
     template = 'items/index.html'
     item_list = Item.objects.all()
     context = {'item_list': item_list}
     return render(request, template, context)
+
+class indexClassBasedView(ListView):
+    model = Item
+    template_name = 'items/index.html'
+    context_object_name = 'item_list'
 
 def addItem(request):
     if request.method == 'POST':

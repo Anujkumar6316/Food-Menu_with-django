@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link rel="stylesheet" href="{% static 'users/style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <form action="" method="post" class="glass" >
+            <h1>Login</h1>
+            {% csrf_token %}
+            {% for fields in form %}
+            <div class="inputField">
+                {{ fields.label_tag }}
+                {{ fields }}
+            </div>
+            {% endfor %}
+            <div class="btn">
+                <button type="submit" class="button">Login</button>
+            </div>
+            <span>Don't have account! <a href="{% url 'users:register' %}">Register here</a></span>
+        </form>
+        <!-- <div class="inputField">
+            <input type="password" required="required">
+            <span>Password</span>
+        </div> -->
+    </div>
+</body>
+
+</html>

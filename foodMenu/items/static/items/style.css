@@ -12,6 +12,7 @@
 
 body {
     background-color: #c2a3d1;
+    /* background-image: url('../images/bg.png'); */
     font-family: Arial, Helvetica, sans-serif;
     display: grid;
     place-items: center;
@@ -153,4 +154,13 @@ nav {
     -webkit-backdrop-filter: blur(15.5px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.glass{
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
